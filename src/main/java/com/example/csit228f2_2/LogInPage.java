@@ -85,7 +85,6 @@ public class LogInPage extends Application {
         }
     }
 
-
     @FXML
     protected void onPasswordShow() {
         if (txtPassword.isVisible()) {
