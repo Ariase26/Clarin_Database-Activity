@@ -42,7 +42,7 @@ public class SignInPage {
             String name = txtUserName.getText();
             String password = txtPassword.getText();
 
-            if (!name.isEmpty() || !password.isEmpty()) {
+            if (!name.isEmpty() && !password.isEmpty()) {
                 statement.setString(1, name);
                 statement.setString(2, password);
                 int rowsInserted = statement.executeUpdate();
@@ -97,16 +97,8 @@ public class SignInPage {
 
     @FXML
     protected void onLoginRedirect(ActionEvent event) throws IOException {
-        // Start HelloApplication
-        HelloApplication helloApp = new HelloApplication();
-        Stage stage = new Stage();
-        try {
-            helloApp.start(stage);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        // Close current window
-        ((Stage) pnMain.getScene().getWindow()).close();
+        Stage currentStage = (Stage) pnMain.getScene().getWindow();
+        currentStage.close();
     }
 
 }

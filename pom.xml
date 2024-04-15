@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.csit228f2_2/com.example.csit228f2_2.HelloApplication</mainClass>
+                            <mainClass>com.example.csit228f2_2/com.example.csit228f2_2.LogInPage</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

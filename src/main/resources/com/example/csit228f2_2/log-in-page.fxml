@@ -5,14 +5,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="pnMain" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.SignInPage">
+<AnchorPane prefHeight="279.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.LogInPage">
     <children>
         <VBox fx:id="pnLogin" alignment="CENTER" prefHeight="279.0" prefWidth="413.0" spacing="20.0">
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
 
-            <Label fx:id="welcomeText" alignment="CENTER" prefHeight="29.0" prefWidth="279.0" text="Registration">
+            <Label fx:id="welcomeText" alignment="CENTER" prefHeight="29.0" prefWidth="279.0" text="Welcome back, User!">
                 <font>
                     <Font name="Arial Bold" size="25.0" />
                 </font>
@@ -50,7 +50,7 @@
                             </TextField>
                         </children>
                     </StackPane>
-               <Separator prefHeight="61.0" prefWidth="19.0" />
+                    <Separator prefHeight="61.0" prefWidth="19.0" />
                     <Button fx:id="btnShow" mnemonicParsing="false" onAction="#onPasswordShow" prefHeight="30.0" prefWidth="47.0" text="Show">
                         <font>
                             <Font name="Arial" size="12.0" />
@@ -58,7 +58,7 @@
                     </Button>
                 </children>
             </HBox>
-            <Button fx:id="btnRegister" onAction="#onRegisterClick" prefHeight="34.0" prefWidth="84.0" text="Register">
+            <Button fx:id="btnlogin" onAction="#onLoginClick" prefHeight="34.0" prefWidth="84.0" text="Login">
                 <font>
                     <Font name="Arial Bold" size="12.0" />
                 </font></Button>
@@ -68,15 +68,15 @@
                 </font>
             </Label>
             <Separator prefHeight="0.0" prefWidth="373.0" />
-         <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
-            <children>
-               <Label prefHeight="23.0" prefWidth="193.0" text="Already have an account?" />
-               <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="83.0" text="Login">
-                  <font>
-                     <Font name="Arial Bold" size="12.0" />
-                  </font>
-               </Button>
-            </children></HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                <children>
+                    <Label prefHeight="23.0" prefWidth="113.0" text="Not a member?" />
+                    <Button mnemonicParsing="false" onAction="#onRegisterRedirect" prefHeight="70.0" prefWidth="83.0" text="Register">
+                        <font>
+                            <Font name="Arial Bold" size="12.0" />
+                        </font>
+                    </Button>
+                </children></HBox>
         </VBox>
     </children>
 </AnchorPane>
