@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="pnMain" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.SignInPage">
+    <children>
+        <VBox fx:id="pnLogin" alignment="CENTER" prefHeight="206.0" prefWidth="313.0" spacing="20.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+
+            <Label fx:id="welcomeText" alignment="CENTER" prefHeight="29.0" prefWidth="279.0" text="Welcome, User!">
+                <font>
+                    <Font name="Arial Bold" size="18.0" />
+                </font>
+            </Label>
+            <HBox prefHeight="25.0" prefWidth="283.0">
+                <children>
+                    <Label prefHeight="30.0" prefWidth="111.0" text="User Name:">
+                        <font>
+                            <Font size="14.0" />
+                        </font></Label>
+                    <TextField fx:id="txtUserName" prefHeight="8.0" prefWidth="203.0">
+                        <font>
+                            <Font size="14.0" />
+                        </font></TextField>
+                </children>
+            </HBox>
+            <HBox prefHeight="0.0" prefWidth="349.0">
+                <children>
+                    <Label prefHeight="30.0" prefWidth="112.0" text="Password:">
+                        <font>
+                            <Font size="14.0" />
+                        </font></Label>
+                    <PasswordField fx:id="txtPassword" prefHeight="25.0" prefWidth="203.0">
+                        <font>
+                            <Font size="14.0" />
+                        </font></PasswordField>
+                </children>
+            </HBox>
+            <Button fx:id="btnLogin" onAction="#onHelloButtonClick" prefHeight="34.0" prefWidth="84.0" text="Register">
+                <font>
+                    <Font name="Arial Bold" size="12.0" />
+                </font></Button>
+        </VBox>
+    </children>
+</AnchorPane>
