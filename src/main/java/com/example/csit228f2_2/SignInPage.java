@@ -1,17 +1,17 @@
 package com.example.csit228f2_2;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,59 +21,92 @@ public class SignInPage {
     @FXML
     private AnchorPane pnMain;
     @FXML
-    private AnchorPane pnHome;
-    @FXML
-    private VBox pnLogin;
-    @FXML
-    private VBox pnLogout;
-    @FXML
     private TextField txtUserName;
     @FXML
     private PasswordField txtPassword;
     @FXML
-    private ColorPicker cpPicker;
-
+    private TextField txtVisiblePassword;
+    @FXML
+    private Button btnShow;
+    @FXML
+    private Button btnRegister;
+    @FXML
+    private Label lblAnnounce;
     private final String[] homecss = {"home1.css", "home2.css", "home3.css"};
 
     @FXML
-    protected void onRegisterClick() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("HelloApplication.java"));
-        String enteredUsername = txtUserName.getText();
-        String enteredPassword = txtPassword.getText();
-
+    protected void onRegisterClick(ActionEvent event) {
         try (Connection c = MySQLConnection.getConnection();
-             PreparedStatement preparedStatement = c.prepareStatement("INSERT INTO users(name, password) VALUES(?, ?)")) {
+             PreparedStatement statement = c.prepareStatement("INSERT INTO tblusers (name, password) VALUES (?, ?)")) {
 
-            preparedStatement.setString(1, enteredUsername);
-            preparedStatement.setString(2, enteredPassword);
+            String name = txtUserName.getText();
+            String password = txtPassword.getText();
 
-            int rowsInserted = preparedStatement.executeUpdate();
-            if(rowsInserted > 0){
-                System.out.println("Data inserted successfully");
-                pnMain.getChildren().remove(pnLogin);
-                pnMain.getChildren().add(root);
+            if (!name.isEmpty() || !password.isEmpty()) {
+                statement.setString(1, name);
+                statement.setString(2, password);
+                int rowsInserted = statement.executeUpdate();
+                if (rowsInserted > 0) {
+                    pnMain.setPrefHeight(700.0);
+                    System.out.println("Data inserted successfully!");
+                    lblAnnounce.setText("Registered successfully!");
+                    lblAnnounce.setVisible(true);
+                    lblAnnounce.setManaged(true);
+                }
+            } else {
+                pnMain.setPrefHeight(700.0);
+                lblAnnounce.setText("No username or password provided!");
+                lblAnnounce.setVisible(true);
+                lblAnnounce.setManaged(true);
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     @FXML
-    protected void onLogOutButtonClick() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        pnHome.getScene().getStylesheets().clear();
-        try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(getClass().getResource("home1.css").getPath()));
-            bw.write(".root { -fx-background-image: url(\"quartzW1.jpg\"); }");
-            bw.newLine();
-            bw.write(".button { -fx-background-color: #" + cpPicker.getValue().toString().substring(2, 8) + "; }");
-            bw.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+    protected void onPasswordShow() {
+        if (txtPassword.isVisible()) {
+            btnShow.setOnMousePressed(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent actionEvent) {
+                    String password = txtPassword.getText();
+                    txtVisiblePassword.setText(password);
+                    txtPassword.setVisible(false);
+                    txtPassword.setManaged(false);
+                    txtVisiblePassword.setVisible(true);
+                    txtVisiblePassword.setManaged(true);
+                    txtVisiblePassword.toFront();
+                }
+            });
+        } else {
+            btnShow.setOnMouseReleased(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    String visiblePassword = txtVisiblePassword.getText();
+                    txtPassword.setText(visiblePassword);
+                    txtVisiblePassword.setVisible(false);
+                    txtVisiblePassword.setManaged(false);
+                    txtPassword.setVisible(true);
+                    txtPassword.setManaged(true);
+                    txtPassword.toFront();
+                }
+            });
         }
-        AnchorPane parent = (AnchorPane) pnHome.getParent();
-        parent.getChildren().remove(pnHome);
-        parent.getChildren().add(root);
     }
+
+    @FXML
+    protected void onLoginRedirect(ActionEvent event) throws IOException {
+        // Start HelloApplication
+        HelloApplication helloApp = new HelloApplication();
+        Stage stage = new Stage();
+        try {
+            helloApp.start(stage);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        // Close current window
+        ((Stage) pnMain.getScene().getWindow()).close();
+    }
+
 }

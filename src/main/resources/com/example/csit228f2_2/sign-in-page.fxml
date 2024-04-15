@@ -7,14 +7,14 @@
 
 <AnchorPane fx:id="pnMain" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.SignInPage">
     <children>
-        <VBox fx:id="pnLogin" alignment="CENTER" prefHeight="206.0" prefWidth="313.0" spacing="20.0">
+        <VBox fx:id="pnLogin" alignment="CENTER" prefHeight="279.0" prefWidth="413.0" spacing="20.0">
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
 
             <Label fx:id="welcomeText" alignment="CENTER" prefHeight="29.0" prefWidth="279.0" text="Welcome, User!">
                 <font>
-                    <Font name="Arial Bold" size="18.0" />
+                    <Font name="Arial Bold" size="25.0" />
                 </font>
             </Label>
             <HBox prefHeight="25.0" prefWidth="283.0">
@@ -23,28 +23,60 @@
                         <font>
                             <Font size="14.0" />
                         </font></Label>
-                    <TextField fx:id="txtUserName" prefHeight="8.0" prefWidth="203.0">
+                    <TextField fx:id="txtUserName" prefHeight="30.0" prefWidth="196.0">
                         <font>
                             <Font size="14.0" />
                         </font></TextField>
                 </children>
             </HBox>
-            <HBox prefHeight="0.0" prefWidth="349.0">
+            <HBox prefHeight="30.0" prefWidth="328.0">
                 <children>
                     <Label prefHeight="30.0" prefWidth="112.0" text="Password:">
                         <font>
                             <Font size="14.0" />
-                        </font></Label>
-                    <PasswordField fx:id="txtPassword" prefHeight="25.0" prefWidth="203.0">
+                        </font>
+                    </Label>
+                    <StackPane HBox.hgrow="ALWAYS">
+                        <children>
+                            <PasswordField fx:id="txtPassword" prefHeight="30.0" prefWidth="195.0">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </PasswordField>
+                            <TextField fx:id="txtVisiblePassword" managed="false" prefHeight="30.0" prefWidth="195.0" visible="false">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </StackPane>
+               <Separator prefHeight="61.0" prefWidth="19.0" />
+                    <Button fx:id="btnShow" mnemonicParsing="false" onAction="#onPasswordShow" prefHeight="30.0" prefWidth="47.0" text="Show">
                         <font>
-                            <Font size="14.0" />
-                        </font></PasswordField>
+                            <Font name="Arial" size="12.0" />
+                        </font>
+                    </Button>
                 </children>
             </HBox>
-            <Button fx:id="btnLogin" onAction="#onHelloButtonClick" prefHeight="34.0" prefWidth="84.0" text="Register">
+            <Button fx:id="btnRegister" onAction="#onRegisterClick" prefHeight="34.0" prefWidth="84.0" text="Register">
                 <font>
                     <Font name="Arial Bold" size="12.0" />
                 </font></Button>
+            <Label fx:id="lblAnnounce" alignment="CENTER" prefWidth="231.0" visible="false" managed="false">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <Separator prefHeight="0.0" prefWidth="373.0" />
+         <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <Label prefHeight="23.0" prefWidth="193.0" text="Already have an account?" />
+               <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="83.0" text="Login">
+                  <font>
+                     <Font name="Arial Bold" size="12.0" />
+                  </font>
+               </Button>
+            </children></HBox>
         </VBox>
     </children>
 </AnchorPane>

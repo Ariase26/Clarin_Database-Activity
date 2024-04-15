@@ -26,7 +26,7 @@ public class SignInApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(SignInApplication.class.getResource("sign-in-page.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 210);
+        Scene scene = new Scene(fxmlLoader.load(), 413, 310);
         stage.setTitle("User Register");
         stage.setScene(scene);
         stage.show();
