@@ -1,5 +1,6 @@
 package com.example.csit228f2_2;
 
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -17,9 +18,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class SignInPage {
+public class SignInPage extends Application {
     @FXML
-    private AnchorPane pnMain;
+    private AnchorPane pnRegisterMain;
     @FXML
     private TextField txtUserName;
     @FXML
@@ -47,14 +48,14 @@ public class SignInPage {
                 statement.setString(2, password);
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
-                    pnMain.setPrefHeight(700.0);
+                    pnRegisterMain.setPrefHeight(700.0);
                     System.out.println("Data inserted successfully!");
                     lblAnnounce.setText("Registered successfully!");
                     lblAnnounce.setVisible(true);
                     lblAnnounce.setManaged(true);
                 }
             } else {
-                pnMain.setPrefHeight(700.0);
+                pnRegisterMain.setPrefHeight(700.0);
                 lblAnnounce.setText("No username or password provided!");
                 lblAnnounce.setVisible(true);
                 lblAnnounce.setManaged(true);
@@ -97,8 +98,28 @@ public class SignInPage {
 
     @FXML
     protected void onLoginRedirect(ActionEvent event) throws IOException {
-        Stage currentStage = (Stage) pnMain.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(LogInPage.class.getResource("log-in-page.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 413, 310);
+
+        Stage stage = new Stage();
+        stage.setTitle("User Login");
+        stage.setScene(scene);
+        stage.show();
+
+        Stage currentStage = (Stage) pnRegisterMain.getScene().getWindow();
         currentStage.close();
     }
 
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(SignInPage.class.getResource("sign-in-page.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 413, 310);
+        stage.setTitle("User Registration");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
 }

@@ -5,21 +5,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="pnMain" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.SignInPage">
+<AnchorPane fx:id="pnRegisterMain" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.SignInPage">
     <children>
         <VBox fx:id="pnLogin" alignment="CENTER" prefHeight="279.0" prefWidth="413.0" spacing="20.0">
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
 
-            <Label fx:id="welcomeText" alignment="CENTER" prefHeight="29.0" prefWidth="279.0" text="Registration">
+            <Label fx:id="welcomeText" alignment="CENTER" prefHeight="29.0" prefWidth="279.0" text="Registration" textFill="#8c383e">
                 <font>
                     <Font name="Arial Bold" size="25.0" />
                 </font>
             </Label>
             <HBox prefHeight="25.0" prefWidth="283.0">
                 <children>
-                    <Label prefHeight="30.0" prefWidth="111.0" text="User Name:">
+                    <Label prefHeight="30.0" prefWidth="111.0" text="User Name:" textFill="#8c383e">
                         <font>
                             <Font size="14.0" />
                         </font></Label>
@@ -31,7 +31,7 @@
             </HBox>
             <HBox prefHeight="30.0" prefWidth="328.0">
                 <children>
-                    <Label prefHeight="30.0" prefWidth="112.0" text="Password:">
+                    <Label prefHeight="30.0" prefWidth="112.0" text="Password:" textFill="#8c383e">
                         <font>
                             <Font size="14.0" />
                         </font>
@@ -51,14 +51,14 @@
                         </children>
                     </StackPane>
                <Separator prefHeight="61.0" prefWidth="19.0" />
-                    <Button fx:id="btnShow" mnemonicParsing="false" onAction="#onPasswordShow" prefHeight="30.0" prefWidth="47.0" text="Show">
+                    <Button fx:id="btnShow" mnemonicParsing="false" onAction="#onPasswordShow" prefHeight="30.0" prefWidth="47.0" text="Show" textFill="#b59817">
                         <font>
                             <Font name="Arial" size="12.0" />
                         </font>
                     </Button>
                 </children>
             </HBox>
-            <Button fx:id="btnRegister" onAction="#onRegisterClick" prefHeight="34.0" prefWidth="84.0" text="Register">
+            <Button fx:id="btnRegister" onAction="#onRegisterClick" prefHeight="34.0" prefWidth="84.0" text="Register" textFill="#b59817">
                 <font>
                     <Font name="Arial Bold" size="12.0" />
                 </font></Button>
@@ -70,8 +70,8 @@
             <Separator prefHeight="0.0" prefWidth="373.0" />
          <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
             <children>
-               <Label prefHeight="23.0" prefWidth="193.0" text="Already have an account?" />
-               <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="83.0" text="Login">
+               <Label prefHeight="23.0" prefWidth="193.0" text="Already have an account?" textFill="#8c383e" />
+               <Button mnemonicParsing="false" onAction="#onLoginRedirect" prefHeight="70.0" prefWidth="83.0" text="Login" textFill="#b59817">
                   <font>
                      <Font name="Arial Bold" size="12.0" />
                   </font>
