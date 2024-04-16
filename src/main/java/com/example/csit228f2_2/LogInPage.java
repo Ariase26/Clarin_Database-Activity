@@ -21,10 +21,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +36,7 @@ public class LogInPage extends Application {
     private TextField txtVisiblePassword;
     @FXML
     private Button btnShow;
+    public  static int id=0;
     @FXML
     private Button btnRegister;
     @FXML
@@ -59,6 +57,7 @@ public class LogInPage extends Application {
                 if (result.next()) {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
                     try {
+                        id=result.getInt("id");
                         Scene scene = new Scene(loader.load());
                         Stage stage = new Stage();
                         stage.setScene(scene);
@@ -120,7 +119,7 @@ public class LogInPage extends Application {
     protected void onRegisterRedirect(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(SignInPage.class.getResource("sign-in-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 413, 310);
-
+        scene.getStylesheets().add(getClass().getResource("signin.css").toExternalForm());
         Stage stage = new Stage();
         stage.setTitle("User Registration");
         stage.setScene(scene);
@@ -135,6 +134,7 @@ public class LogInPage extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LogInPage.class.getResource("log-in-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 413, 310);
+        scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
         stage.setTitle("User Login");
         stage.setScene(scene);
         stage.show();

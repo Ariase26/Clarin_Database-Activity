@@ -5,26 +5,32 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="175.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.HelloController">
+<AnchorPane fx:id="pnHomePage" prefHeight="175.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
       <HBox alignment="TOP_CENTER" layoutX="39.0" layoutY="36.0" prefHeight="0.0" prefWidth="380.0">
          <children>
-            <ToggleButton fx:id="tbNight" mnemonicParsing="false" onAction="#onNightModeClick" text="Night Mode">
+            <ToggleButton fx:id="tbNight" mnemonicParsing="false" onAction="#onNightModeClick" prefHeight="38.0" prefWidth="28.0" text="🌓">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </ToggleButton>
-            <Separator prefHeight="23.0" prefWidth="115.0" />
-            <Button fx:id="btnDeleteAccount" mnemonicParsing="false" onAction="#onDeleteAccountClick" prefWidth="112.0" text="Delete Account">
+            <Separator prefHeight="25.0" prefWidth="13.0" />
+            <ToggleButton fx:id="tbGoGreen" mnemonicParsing="false" onAction="#onGreenClick" text="🍁" />
+            <Label alignment="CENTER" prefHeight="25.0" prefWidth="237.0" text="HOME PAGE">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnDeleteAccount" mnemonicParsing="false" onAction="#onDeleteAccountClick" prefHeight="39.0" prefWidth="30.0" text="♻">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </Button>
             <Separator prefHeight="23.0" prefWidth="12.0" />
-            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#onLogoutClick" text="Logout">
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#onLogoutClick" prefHeight="41.0" prefWidth="28.0" text="⬅">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
@@ -39,8 +45,8 @@
          <font>
             <Font name="Arial" size="12.0" />
          </font></Label>
-      <Separator layoutX="43.0" layoutY="195.0" prefHeight="25.0" prefWidth="380.0" />
-      <HBox alignment="CENTER" layoutX="67.0" layoutY="231.0" prefHeight="25.0" prefWidth="333.0">
+      <Separator layoutX="43.0" layoutY="195.0" prefHeight="8.0" prefWidth="380.0" />
+      <HBox alignment="CENTER" layoutX="67.0" layoutY="214.0" prefHeight="23.0" prefWidth="333.0">
          <children>
             <TextField fx:id="txtname" prefHeight="25.0" prefWidth="176.0" />
             <Separator prefHeight="25.0" prefWidth="21.0" />
@@ -51,9 +57,10 @@
             </Button>
          </children>
       </HBox>
-      <Label fx:id="lblContent2" alignment="CENTER" layoutX="76.0" layoutY="267.0" prefHeight="17.0" prefWidth="315.0" text="&quot;be part of a change, start with your name now!&quot;&quot;">
+      <Label fx:id="lblContent2" alignment="CENTER" layoutX="76.0" layoutY="242.0" prefHeight="25.0" prefWidth="315.0" text="&quot; be part of a change, start with your name now! &quot;">
          <font>
             <Font name="Arial" size="12.0" />
          </font></Label>
+      <Separator layoutX="42.0" layoutY="71.0" prefHeight="23.0" prefWidth="380.0" />
    </children>
 </AnchorPane>

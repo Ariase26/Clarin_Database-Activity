@@ -12,14 +12,14 @@
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
 
-            <Label fx:id="welcomeText" alignment="CENTER" prefHeight="29.0" prefWidth="279.0" text="Welcome back, User!" textFill="#b59817">
+            <Label fx:id="welcomeText" alignment="CENTER" prefHeight="29.0" prefWidth="279.0" text="Welcome back, User!" textFill="#f7edbd">
                 <font>
                     <Font name="Arial Bold" size="25.0" />
                 </font>
             </Label>
             <HBox prefHeight="25.0" prefWidth="283.0">
                 <children>
-                    <Label prefHeight="30.0" prefWidth="111.0" text="User Name:" textFill="#b59817">
+                    <Label prefHeight="30.0" prefWidth="111.0" text="User Name:" textFill="#f7edbd">
                         <font>
                             <Font size="14.0" />
                         </font></Label>
@@ -31,7 +31,7 @@
             </HBox>
             <HBox prefHeight="30.0" prefWidth="328.0">
                 <children>
-                    <Label prefHeight="30.0" prefWidth="112.0" text="Password:" textFill="#b59817">
+                    <Label prefHeight="30.0" prefWidth="112.0" text="Password:" textFill="#f7edbd">
                         <font>
                             <Font size="14.0" />
                         </font>
@@ -70,7 +70,7 @@
             <Separator prefHeight="0.0" prefWidth="373.0" />
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                 <children>
-                    <Label prefHeight="23.0" prefWidth="113.0" text="Not a member?" textFill="#b59817" />
+                    <Label prefHeight="23.0" prefWidth="113.0" text="Not a member?" textFill="#f7edbd" />
                     <Button mnemonicParsing="false" onAction="#onRegisterRedirect" prefHeight="70.0" prefWidth="83.0" text="Register" textFill="#8c383e">
                         <font>
                             <Font name="Arial Bold" size="12.0" />

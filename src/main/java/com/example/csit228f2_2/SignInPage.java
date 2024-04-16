@@ -100,7 +100,7 @@ public class SignInPage extends Application {
     protected void onLoginRedirect(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LogInPage.class.getResource("log-in-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 413, 310);
-
+        scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
         Stage stage = new Stage();
         stage.setTitle("User Login");
         stage.setScene(scene);
@@ -114,6 +114,7 @@ public class SignInPage extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(SignInPage.class.getResource("sign-in-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 413, 310);
+        scene.getStylesheets().add(getClass().getResource("signin.css").toExternalForm());
         stage.setTitle("User Registration");
         stage.setScene(scene);
         stage.show();
