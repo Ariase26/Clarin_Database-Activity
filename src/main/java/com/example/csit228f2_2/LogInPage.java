@@ -36,12 +36,11 @@ public class LogInPage extends Application {
     private TextField txtVisiblePassword;
     @FXML
     private Button btnShow;
-    public  static int id=0;
     @FXML
     private Button btnRegister;
     @FXML
     private Label lblAnnounce;
-
+    public  static int id = 0;
     @FXML
     protected void onLoginClick(ActionEvent event) {
         try (Connection c = MySQLConnection.getConnection();

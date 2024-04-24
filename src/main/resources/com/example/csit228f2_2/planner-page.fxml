@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="pnDashboard" prefHeight="447.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.PlannerPage">
+   <children>
+      <Label layoutX="203.0" layoutY="31.0" text="Calendar Event Planner">
+         <font>
+            <Font name="Consolas" size="24.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="eventDate" layoutX="47.0" layoutY="99.0" prefHeight="22.0" prefWidth="218.0" />
+      <TextField fx:id="eventTitle" layoutX="47.0" layoutY="162.0" prefHeight="25.0" prefWidth="218.0">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></TextField>
+      <Label layoutX="47.0" layoutY="76.0" text="Event Date">
+         <font>
+            <Font name="Consolas" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="140.0" text="Event Title">
+         <font>
+            <Font name="Consolas" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="203.0" text="Event Description">
+         <font>
+            <Font name="Consolas" size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="eventDesc" layoutX="47.0" layoutY="224.0" prefHeight="144.0" prefWidth="218.0">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </TextArea>
+      <Button fx:id="btnAddEvent" layoutX="178.0" layoutY="385.0" mnemonicParsing="false" onAction="#onAddEvent" text="Add Event">
+         <font>
+            <Font name="Consolas" size="14.0" />
+         </font>
+      </Button>
+      <ScrollPane layoutX="324.0" layoutY="100.0">
+         <content>
+            <ListView fx:id="eventList" prefHeight="269.0" prefWidth="291.0" />
+         </content>
+      </ScrollPane>
+      <Label layoutX="484.0" layoutY="76.0" text="Plans and Events">
+         <font>
+            <Font name="Consolas" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRefresh" layoutX="587.0" layoutY="386.0" mnemonicParsing="false" onAction="#onRefreshClick" text="🔄" />
+      <Button fx:id="btnView" layoutX="324.0" layoutY="384.0" mnemonicParsing="false" onAction="#onViewClick" text="View">
+         <font>
+            <Font name="Consolas" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="380.0" layoutY="384.0" mnemonicParsing="false" onAction="#onDeleteClick" text="Delete">
+         <font>
+            <Font name="Consolas" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnUpdate" layoutX="47.0" layoutY="384.0" mnemonicParsing="false" onAction="#onUpdateClick" text="Update">
+         <font>
+            <Font name="Consolas" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnBack" layoutX="47.0" layoutY="30.0" mnemonicParsing="false" onAction="#onBackClick" text="🔙">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

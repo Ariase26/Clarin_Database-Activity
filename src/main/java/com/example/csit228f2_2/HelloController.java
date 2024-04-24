@@ -35,9 +35,11 @@ public class HelloController {
     private Label lblContent2;
     @FXML
     private TextField txtname;
+    @FXML
+    private Button btnPlanner;
 
     @FXML
-    private void initialize() {
+    public void initialize() {
         displayWelcomeMessage();
     }
 
@@ -168,5 +170,21 @@ public class HelloController {
         }catch (Exception e){
 
         }
+    }
+
+    @FXML
+    private void onRedirectPlanner() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("planner-page.fxml"));
+        try {
+            Scene scene = new Scene(loader.load());
+            scene.getStylesheets().add(getClass().getResource("green.css").toExternalForm());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage currentStage = (Stage) pnHomePage.getScene().getWindow();
+        currentStage.close();
     }
 }

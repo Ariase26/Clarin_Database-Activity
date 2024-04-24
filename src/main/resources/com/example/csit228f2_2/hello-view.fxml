@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="pnHomePage" prefHeight="175.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.HelloController">
+<AnchorPane fx:id="pnHomePage" prefHeight="280.0" prefWidth="424.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -62,5 +62,10 @@
             <Font name="Arial" size="12.0" />
          </font></Label>
       <Separator layoutX="42.0" layoutY="71.0" prefHeight="23.0" prefWidth="380.0" />
+      <Separator layoutX="45.0" layoutY="279.0" prefHeight="8.0" prefWidth="380.0" />
+      <Button fx:id="btnPlanner" layoutX="260.0" layoutY="298.0" mnemonicParsing="false" onAction="#onRedirectPlanner" prefHeight="25.0" prefWidth="156.0" text="Go to Event Planner ➡">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>
